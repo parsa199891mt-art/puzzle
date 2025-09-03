@@ -1,9 +1,19 @@
+const startScreen = document.getElementById('start-screen');
+const startBtn = document.getElementById('start-btn');
+const gameScreen = document.getElementById('game-screen');
 const container = document.getElementById('puzzle-container');
 const shuffleBtn = document.getElementById('shuffle');
 const message = document.getElementById('message');
 const size = 3;
 let pieces = [];
 let firstClick = null;
+
+// شروع بازی
+startBtn.addEventListener('click', () => {
+    startScreen.classList.add('hidden');
+    gameScreen.classList.remove('hidden');
+    createPuzzle();
+});
 
 // ایجاد قطعات پازل
 function createPuzzle() {
@@ -57,6 +67,8 @@ function shuffle() {
     message.textContent = '';
 }
 
+shuffleBtn.addEventListener('click', shuffle);
+
 // بررسی برنده شدن
 function checkWin() {
     let win = true;
@@ -68,8 +80,6 @@ function checkWin() {
     }
     if (win) {
         message.textContent = '🎉 تبریک! پازل کامل شد!';
+        container.style.backgroundColor = '#d4edda';
     }
 }
-
-createPuzzle();
-shuffleBtn.addEventListener('click', shuffle);
