@@ -7,10 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>پازل عددی حرفه‌ای</h1>
-    <div id="puzzle-container"></div>
-    <button id="shuffle">پازل را به هم بزن</button>
-    <p id="message"></p>
+    <!-- صفحه شروع -->
+    <div id="start-screen">
+        <h1>🎉 به پازل عددی خوش آمدید! 🎉</h1>
+        <p>آیا آماده هستید تا مهارت‌های خود را در حل پازل امتحان کنید؟</p>
+        <button id="start-btn">شروع بازی</button>
+    </div>
+
+    <!-- صفحه بازی -->
+    <div id="game-screen" class="hidden">
+        <h1>پازل عددی حرفه‌ای</h1>
+        <div id="puzzle-container"></div>
+        <button id="shuffle">پازل را به هم بزن</button>
+        <p id="message"></p>
+    </div>
 
     <script src="script.js"></script>
 </body>
