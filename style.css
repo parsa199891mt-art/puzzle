@@ -1,13 +1,46 @@
 body {
     font-family: Tahoma, sans-serif;
     text-align: center;
-    background: #f0f0f0;
+    background: linear-gradient(135deg, #f0f0f0, #a8edea);
+    transition: background 0.5s;
 }
 
 h1 {
     margin-top: 20px;
+    color: #333;
 }
 
+.hidden {
+    display: none;
+}
+
+/* صفحه شروع */
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#start-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    transition: transform 0.2s;
+}
+
+#start-btn:hover {
+    transform: scale(1.1);
+}
+
+/* صفحه بازی */
 #puzzle-container {
     display: grid;
     grid-template-columns: repeat(3, 100px);
@@ -59,4 +92,10 @@ h1 {
     font-size: 1.2rem;
     color: #ff5722;
     margin-top: 15px;
+}
+
+/* انیمیشن */
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
